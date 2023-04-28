@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class JwtTokenProvider {
 
-    private final String JWT_SECRET = "hieuvnua";
+    private final String JWT_SECRET = "medisure_as";
 
     private static final String AUTHORITIES_KEY = "roles";
 
@@ -30,11 +30,11 @@ public class JwtTokenProvider {
         System.out.println("oke");
     }
 
-    // Tạo ra jwt từ thông tin user
+    //Generate jwt from user information
     public String generateToken(CustomUserDetails userDetails) {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + JWT_EXPIRATION);
-        // Tạo chuỗi json web token từ id của user.
+        // Generate web token json string from user id.
         return Jwts.builder()
                 .setSubject(Long.toString(userDetails.getUser().getId()))
                 .setIssuedAt(now)
@@ -44,7 +44,7 @@ public class JwtTokenProvider {
                 .compact();
     }
 
-    // Lấy thông tin user từ jwt
+    // Get user information from jwt
     public Long getUserIdFromJWT(String token) {
         Claims claims = Jwts.parser()
                 .setSigningKey(JWT_SECRET)

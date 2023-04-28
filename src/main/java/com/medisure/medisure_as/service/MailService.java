@@ -28,8 +28,8 @@ public class MailService {
     }
 
 
-    final static String username = "vnua.edu.hieu0210@gmail.com";
-    final static String password = "zjyyntgmdjvhvibk";
+    final static String username = "medisuresystem@gmail.com";
+    final static String password = "rmtydagfnaxgoyyx";
 
     @Async
     public void sendEmail(String to, String subject, String content, boolean isMultipart, boolean isHtml) {

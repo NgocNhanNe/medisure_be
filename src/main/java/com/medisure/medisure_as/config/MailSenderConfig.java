@@ -11,7 +11,7 @@ import java.util.Properties;
 public class MailSenderConfig {
 
     final static String username = "medisuresystem@gmail.com";
-    final static String password = "thvpomzzxmaqfiwh";
+    final static String password = "rmtydagfnaxgoyyx";
 
     @Bean
     public JavaMailSender getJavaMailSender() {
